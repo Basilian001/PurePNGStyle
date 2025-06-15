@@ -35,3 +35,107 @@ purepngstyle/
 ├── index.html
 ├── style.css
 └── script.js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PurePNGStyle</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>PurePNGStyle</h1>
+    <p>Culture. Style. Vibes. — 100% Pure PNG.</p>
+  </header>
+
+  <section id="products" class="grid">
+    <!-- Products will be added by JavaScript -->
+  </section>
+
+  <footer>
+    <p>Follow us:</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@purepngstyle001" target="_blank">TikTok</a>
+      <a href="https://www.youtube.com/@KiinzTegera001" target="_blank">YouTube</a>
+      <a href="mailto:bkoabanantai@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+  color: #222;
+}
+header {
+  background-color: #ffcc00;
+  padding: 2rem;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.product {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.product img {
+  width: 100%;
+  border-radius: 6px;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+.socials a {
+  margin: 0 10px;
+  color: #ffcc00;
+  text-decoration: none;
+}
+const products = [
+  {
+    name: "Meri Blouse - Sunset Design",
+    image: "https://via.placeholder.com/300x200.png?text=Meri+Blouse",
+    price: "K80",
+
+const products = [
+  {
+    name: "Meri Blouse - Sunset Design",
+    image: "https://via.placeholder.com/300x200.png?text=Meri+Blouse",
+    price: "K80",
+  },
+  {
+    name: "Bilum - Woven Traditions",
+    image: "https://via.placeholder.com/300x200.png?text=Bilum+Bag",
+    price: "K120",
+  },
+  {
+    name: "Island Reggae Shirt",
+    image: "https://via.placeholder.com/300x200.png?text=Reggae+Shirt",
+    price: "K90",
+  },
+];
+
+const container = document.getElementById('products');
+products.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'product';
+  card.innerHTML = `
+    <img src="${p.image}" alt="${p.name}" />
+    <h3>${p.name}</h3>
+    <p>Price: ${p.price}</p>
+  `;
+  container.appendChild(card);
+});
