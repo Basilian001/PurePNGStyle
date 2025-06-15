@@ -31,3 +31,7 @@ google-services.json
 
 # Android Profiling
 *.hprof
+purepngstyle/
+├── index.html
+├── style.css
+└── script.js
